@@ -1,12 +1,12 @@
 import { useState } from "react";
+import { v4 as uuid } from "uuid";
 
 const TodoForm = ({handleAddTodos}) => {
   const [todo, setTodo] = useState("");
   const handleAddTodo = (e) => {
     e.preventDefault();
-    handleAddTodos(todo)
+    handleAddTodos({id: uuid(), title: todo, completed: false})
     setTodo("");
-    console.log("Todo Added");
   };
   return (
     <div>

@@ -1,6 +1,6 @@
 import Todo from "./Todo";
 
-const Todos = ({ todos, handleDeleteTodoItem }) => {
+const Todos = ({ todos, handleDeleteTodoItem, handleToggleTodo }) => {
   return (
     <div>
       {todos.map((todo) => {
@@ -9,6 +9,7 @@ const Todos = ({ todos, handleDeleteTodoItem }) => {
             {...todo}
             key={todo.id}
             handleDeleteTodoItem={handleDeleteTodoItem}
+            handleToggleTodo={handleToggleTodo}
           />
         );
       })}
