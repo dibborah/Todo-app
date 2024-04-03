@@ -24,7 +24,7 @@ const TodoForm = ({ handleAddTodos }) => {
       <button type="submit" className="todoForm__btn">
         Add
       </button>
-        <Toaster position="top-center" reverseOrder={false} />
+          <Toaster position="top-center" reverseOrder={false} />
       {
         // Type submit kar raha hu taki ENTER button hit karne par main chahta hu ki form automatically submit ho jae
       }
