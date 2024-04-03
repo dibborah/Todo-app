@@ -14,18 +14,24 @@ const App = () => {
     setTodos((prevState) => prevState.filter((todo) => todo.id !== id));
   };
   const handleToggleTodo = (id) => {
-    setTodos((prevState) => (
+    setTodos((prevState) =>
       todos.map((todo) => {
-        if(todo.id === id) return {...todo, completed: !todo.completed}
+        if (todo.id === id) return { ...todo, completed: !todo.completed };
         else return todo;
       })
-    ))
-  }
+    );
+  };
   return (
-    <div>
-      <h1 className="main-title">TodoList</h1>
-      <TodoForm handleAddTodos={handleAddTodos} />
-      <Todos todos={todos} handleDeleteTodoItem={handleDeleteTodoItem} handleToggleTodo={handleToggleTodo}/>
+    <div className="container">
+      <h1 className="main-title">Todo List</h1>
+      <span >
+        <TodoForm handleAddTodos={handleAddTodos} />
+      </span>
+      <Todos
+        todos={todos}
+        handleDeleteTodoItem={handleDeleteTodoItem}
+        handleToggleTodo={handleToggleTodo}
+      />
     </div>
   );
 };
