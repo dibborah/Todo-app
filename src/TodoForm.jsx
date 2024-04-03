@@ -1,11 +1,16 @@
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { v4 as uuid } from "uuid";
 
 const TodoForm = ({ handleAddTodos }) => {
   const [todo, setTodo] = useState("");
   const handleAddTodo = (e) => {
     e.preventDefault();
-    handleAddTodos({ id: uuid(), title: todo, completed: false });
+    if (todo.trim() === "") {
+      toast.error("Please enter something !!!");
+    } else {
+      handleAddTodos({ id: uuid(), title: todo, completed: false });
+    }
     setTodo("");
   };
   return (
@@ -19,6 +24,7 @@ const TodoForm = ({ handleAddTodos }) => {
       <button type="submit" className="todoForm__btn">
         Add
       </button>
+        <Toaster position="top-center" reverseOrder={false} />
       {
         // Type submit kar raha hu taki ENTER button hit karne par main chahta hu ki form automatically submit ho jae
       }

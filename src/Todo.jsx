@@ -18,7 +18,7 @@ const Todo = ({
   return (
     <div>
       <span>
-        <input type="checkbox" onChange={() => handleCompleted(id)} />
+        <input type="checkbox" checked={completed} onChange={() => handleCompleted(id)} />
         <span style={{ textDecoration: `${completed ? "line-through" : ""}` }}>
           {title}
         </span>{" "}
